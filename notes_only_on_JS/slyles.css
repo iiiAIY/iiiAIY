@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #222428;
+    font: 400 18px/28px 'Inter';
+    max-width: 100%;
+    color:#ffffff;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 100px; 
+}
+
+.Title {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+input {
+    display: block;
+    width: 920px;
+    background-color: #ffffff;
+    height: 60px;
+    margin: 20px 0;
+    padding-left: 10px;
+    border-radius: 10px;
+    max-width: 100%;
+    color: #222428;
+} 
+
+/* input:focus {
+    bor
+} */
+
+.add__btn {
+    width: 920px;
+    height: 65px;
+    border: solid 2px #0dcaf0;
+    border-radius: 10px;
+    color: #0dcaf0;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 25px;
+
+    &:hover {
+        background-color: #0dcaf0;
+        color: #222428;
+    }
+}
+
+
+ul li {
+    list-style-type: none;
+    background-color: #ffffff;
+    max-width: 100%;
+    
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+span {
+    color: #222428;
+    background-color: #ffffff;
+    user-select: none;
+}
+
+
+.done {
+    background-color:#198754;
+    font-size: 35px;
+    color:#ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color:#157347;
+    }
+
+    &.done--true {
+        background-color:darkgoldenrod;
+        cursor: default;
+    }
+
+}
+
+
+.close {
+    background-color:#dc3545;
+    font-size: 35px;
+    color:#ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color:#bb2d3b;
+    }
+}
+
+.note-done {
+    text-decoration: line-through;
+}
