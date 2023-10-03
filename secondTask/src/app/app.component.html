@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>All people</h1>
+  <div class="card-wrapper">
+    <div class="card" *ngFor="let people of peoples">
+      <div class="card-info">
+        <b class="card__item">Информация</b>
+        <span class="card__item">{{people.name}}</span>
+        <span class="card__item">{{people.age}}</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <form class="card-info" [formGroup]="myReacriveForm">
+        <b class="card__item">Добавить человека</b>
+        <input typeof="string" placeholder="Имя" formControlName="name">
+        <input typeof="number" placeholder="Возраст" formControlName="age">
+        <button [disabled]="myReacriveForm.invalid" [style]="{
+        'cursor' : myReacriveForm.invalid ? 'default' : '',
+        'background-color' : myReacriveForm.invalid ? '#645F5FFF' : '',
+        'border' : myReacriveForm.invalid ? 'none' : '',
+        'color' : myReacriveForm.invalid ? '#ffffff' : '',
+        }" (click)="submitForm()">Добавить</button>
+      </form>
+    </div>
+  </div>
+
+  <h1>Only батя</h1>
+  <div class="card-wrapper">
+    <div class="card" *ngFor="let batya of batyas | filterBatya">
+      <div class="card-info">
+        <b class="card__item card-info__title">Информация</b>
+        <span class="card__item">{{batya.name}}</span>
+        <span class="card__item">{{batya.age}}</span>
+        <span class="card__item">{{batya.isBatya ? 'точно батя' : ''}}</span>
+      </div>
+    </div>
+  </div>
+
+  <h1>Hard батя</h1>
+  <div class="card-wrapper">
+    <div class="card" *ngFor="let batya of batyas | filterHardBatya">
+      <div class="card-info">
+        <b class="card__item card-info__title">Информация</b>
+        <span class="card__item">{{batya.name}}</span>
+        <span class="card__item">{{batya.age}}</span>
+        <span class="card__item">{{batya.isBatya ? 'точно батя' : ''}}</span>
+      </div>
+    </div>
+  </div>
+</div>
