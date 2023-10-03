@@ -1,0 +1,33 @@
+<div class="container">
+  <form [formGroup]="mReactiveForm" class="form-wapper">
+    <div class="controlItem">
+      <span>Фамилия</span>
+      <input formControlName="lastName">
+    </div>
+    <div class="controlItem">
+      <span>Имя</span>
+      <input formControlName="firstName">
+    </div>
+    <div class="controlItem">
+      <span>Отчество</span>
+      <input formControlName="patronymic">
+    </div>
+    <div class="controlItem">
+      <span>Возраст</span>
+      <input formControlName="age">
+    </div>
+    <div class="controlItem">
+      <span>СНИЛС</span>
+      <input formControlName="insuranceNumber">
+    </div>
+    <div class="controlItem">
+      <span>Код диагноза</span>
+      <input formControlName="codeDiseases">
+    </div>
+    <div class="controlItem">
+      <span>Описание диагноза</span>
+      <textarea class="tarea" formControlName="diseasesDetail"> </textarea>
+    </div>
+  </form>
+  <button class="add-btn" mat-raised-button style="background: royalblue" (click)="submitForm()">Добавить данные</button>
+</div>
