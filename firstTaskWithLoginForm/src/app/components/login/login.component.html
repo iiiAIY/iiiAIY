@@ -1,0 +1,25 @@
+<div class="auth-wrapper">
+  <div class="auth-block">
+    <div class="auth-info">
+      <h1>Login</h1>
+      <p class="muted">Please enter your login and password!</p>
+      <form class="auth-form" [formGroup]="myReactiveForm">
+        <div class="auth-form__item">
+          <input placeholder="example@gmail.com" type="email" formControlName="email">
+          <label>Email</label>
+          <p *ngIf="myReactiveForm.get('email')?.invalid && myReactiveForm.get('email')?.touched"><span class="invalid-form">Email is required</span></p>
+        </div>
+        <div class="auth-form__item">
+          <input placeholder="password" type="password" formControlName="password">
+          <label>Password</label>
+          <p *ngIf="myReactiveForm.get('password')?.invalid && myReactiveForm.get('password')?.touched">
+            <span class="invalid-form">Password is required (min. lenght = 8)</span>
+          </p>
+        </div>
+        <button class="btn-submit" [ngClass]="{'btn-inv': myReactiveForm.invalid}" [disabled]="myReactiveForm.invalid" (click)="submitForm()">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" class="muted">Sign Up</a> </p>
+    </div>
+  </div>
+</div>
+
