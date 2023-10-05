@@ -1,0 +1,29 @@
+<div class="container">
+  <button (click)="isEdit = true; isNew = true" mat-raised-button class="add-ppl-btn">Добавить информацию</button>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 my-table-style">
+
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns, index as i">
+      <th mat-header-cell class="table-header" *matHeaderCellDef> {{displayedColumnsRus[i]}} </th>
+      <td mat-cell *matCellDef="let element"> {{element[column]}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="expand">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button *ngIf="!isEdit" mat-icon-button aria-label="expand edit_save" (click)="isEdit = true; getPeople(element.id)">
+          <mat-icon>edit_note</mat-icon>
+        </button>
+        <button *ngIf="isEdit" mat-icon-button aria-label="expand edit_save" (click)="isEdit = false">
+          <mat-icon>save</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsWithExpand"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsWithExpand;"></tr>
+  </table>
+
+  <app-form [newPeople]="isNew" (isUpdateTable)="isEdit = $event; isNew = $event" *ngIf="isEdit"></app-form>
+</div>
+

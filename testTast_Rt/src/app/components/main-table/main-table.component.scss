@@ -1,0 +1,21 @@
+.container {
+  width: 1000px;
+  margin: 100px auto;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  user-select: none;
+  margin-bottom: 50px;
+
+  .table-header {
+    text-align: center;
+  }
+}
+
+.add-ppl-btn {
+  margin-bottom: 20px;
+  background: royalblue;
+}
+

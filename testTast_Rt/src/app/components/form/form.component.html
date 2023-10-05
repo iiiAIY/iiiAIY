@@ -1,0 +1,23 @@
+<form [formGroup]="myRF" class="form-wapper">
+  <div class="controlItem" *ngFor="let mainElem of displayedMainForm; index as i">
+    <span>{{displayedFormRus[i]}}</span>
+    <input formControlName="{{mainElem}}">
+  </div>
+  <div formGroupName="moreInfo">
+    <div class="controlItem inside" *ngFor="let infoElem of displayedInfoForm; index as i">
+      <span>{{displayedFormRus[i+4]}}</span>
+      <input formControlName="{{infoElem}}">
+    </div>
+    <div formGroupName="education">
+      <div class="controlItem inside" *ngFor="let educElem of displayedInfoEducForm; index as i">
+        <span>{{displayedFormRus[i+8]}}</span>
+        <input formControlName="{{educElem}}">
+      </div>
+    </div>
+  </div>
+</form>
+<button *ngIf="!newPeople" class="add-btn" mat-raised-button style="background: royalblue"
+        (click)="updateData()">Сохранить изменения</button>
+<button *ngIf="newPeople" [disabled]="myRF.invalid" class="add-btn" mat-raised-button style="background: royalblue"
+        (click)="postData()">Добавить информацию</button>
+<span *ngIf="myRF.invalid" class="form-invalid">При возрасте более 18 лет - поле "Должность" обязательное к заполнению</span>
